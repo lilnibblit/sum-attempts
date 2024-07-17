@@ -9,7 +9,9 @@
 	"name": "Sum Attempts",
 	"version": "v1.0.0",
 	"developer": "lilnibblit",
-	"description": "",
+	"description": "Port of the sum attempts mod by matcool",
+	"tags": ["interface"],
+	"repository": "https://github.com/lilnibblit/sum-attempts",
 	"resources": {
 		"files": ["resources/*"]
 	}
