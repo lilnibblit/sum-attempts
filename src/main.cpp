@@ -48,19 +48,28 @@ class $modify(MyLevelBrowserLayer, LevelBrowserLayer) {
 		}
 
 		if (so->m_searchType == SearchType::MyLevels || so->m_searchType == SearchType::SavedLevels) {
-			auto menu = CCMenu::create();
-			auto sprite = CCSprite::create("GJ_button_01.png");
-			auto skull = CCSprite::createWithSpriteFrameName("miniSkull_001.png");
-			skull->setPosition({20, 20});
-			sprite->addChild(skull);
-			auto btn = CCMenuItemSpriteExtra::create(
-				sprite,
-				this,
-				menu_selector(MyLevelBrowserLayer::callback)
-			);
-			menu->addChild(btn);
-			menu->setPosition({30, 120});
-			this->addChild(menu);
+            auto menu = this->getChildByID("my-levels-menu");
+
+            auto sprite = CCSprite::create("GJ_button_01.png");
+            auto skull = CCSprite::createWithSpriteFrameName("miniSkull_001.png");
+            skull->setPosition({20, 20});
+            sprite->addChild(skull);
+            auto btn = CCMenuItemSpriteExtra::create(
+                sprite,
+                this,
+                menu_selector(MyLevelBrowserLayer::callback)
+            );
+            
+            if (menu) {
+                menu->addChild(btn);
+                menu->updateLayout();
+            } else {
+                auto menu = CCMenu::create();
+                
+                menu->addChild(btn);
+                menu->setPosition({30, 120});
+                this->addChild(menu);
+            }
 		}
 
 		return true;
