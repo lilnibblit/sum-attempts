@@ -7,7 +7,7 @@
 	},
 	"id": "lilnibblit.sum_attempts",
 	"name": "Sum Attempts",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "lilnibblit",
 	"description": "Port of the sum attempts mod by matcool",
 	"tags": ["interface"],
